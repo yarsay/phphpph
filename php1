@@ -1,0 +1,145 @@
+<?php
+//1 Генерация случайных значений для cols и rows в диапазоне от 5 до 20
+$cols = mt_rand(5, 20);
+$rows = mt_rand(5, 20);
+
+echo "<table border='1'>";
+for ($i = 1; $i <= $rows; $i++) {
+    echo "<tr>";
+    for ($j = 1; $j <= $cols; $j++) {
+        $cell_value = ($i - 1) * $cols + $j + 2; // значения начинаются с 3
+
+        if ($i === 1) {
+            echo "<td><strong><font color='green'>$cell_value</font></strong></td>";
+        } else {
+            echo "<td>$cell_value</td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+?>
+//2---------------------------------
+<?php
+// Генерация случайных значений для cols и rows в диапазоне от 5 до 20
+$cols = mt_rand(5, 20);
+$rows = mt_rand(5, 20);
+
+// Создание массива с переменными cols и rows
+$table_data = array(
+    'cols' => $cols,
+    'rows' => $rows
+);
+
+echo "<table border='1'>";
+
+for ($i = 1; $i <= $table_data['rows']; $i++) {
+    echo "<tr>";
+    for ($j = 1; $j <= $table_data['cols']; $j++) {
+        $cell_value = ($i - 1) * $table_data['cols'] + $j + 1; // значения начинаются с 2
+
+        if ($j === 1) {
+            echo "<td style='font-weight:bold; color:red;'>$cell_value</td>";
+        } else {
+            echo "<td>$cell_value</td>";
+        }
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
+?>
+//3--------------------------------------
+<?php
+// Генерация случайных значений для cols и rows в диапазоне от 5 до 20
+$cols = mt_rand(5, 20);
+$rows = mt_rand(5, 20);
+
+echo "<table border='1'>";
+for ($i = 1; $i <= $rows; $i++) {
+    echo "<tr>";
+    for ($j = 1; $j <= $cols; $j++) {
+        if ($i === $j) {
+            echo "<td style='background-color: yellow;'>" . $i * $j . "</td>";
+        } elseif ($i === 1 || $j === 1) {
+            echo "<td style='background-color: lightblue;'></td>";
+        } else {
+            echo "<td></td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+?>
+//4---------------------------------------
+<?php
+// Генерация случайного значения в диапазоне от 5 до 20
+$value = mt_rand(5, 20);
+
+echo "<table border='1'>";
+for ($i = 1; $i <= $value; $i++) {
+    echo "<tr>";
+    for ($j = 1; $j <= $value; $j++) {
+        if ($i === $j) {
+            echo "<td style='background-color: pink;'>" . ($i + $j) . "</td>";
+        } else {
+            echo "<td>" . ($i + $j) . "</td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+?>
+//5-----------------------------------
+<?php
+// Генерация случайных значений для cols и rows в диапазоне от 5 до 20
+$cols = mt_rand(5, 20);
+$rows = mt_rand(5, 20);
+
+// Создание массива с переменными cols и rows
+$table_data = array(
+    'cols' => $cols,
+    'rows' => $rows
+);
+
+echo "<table border='1'>";
+for ($i = 1; $i <= $table_data['rows']; $i++) {
+    echo "<tr>";
+    for ($j = 1; $j <= $table_data['cols']; $j++) {
+        $cell_value = ($i - 1) * $table_data['cols'] + $j * 2 + 3; // нечетные числа начиная с 5
+
+        if ($i === $j) {
+            echo "<td style='background-color: lightblue;'>$cell_value</td>";
+        } else {
+            echo "<td style='background-color: lightgreen;'>$cell_value</td>";
+        }
+    }
+    echo "</tr>";
+}
+echo "</table>";
+?>
+//6-----------------------------------
+<?php
+function calculate($num1, $num2, $num3, $operation) {
+    $result = 0;
+
+    if ($operation === '+') {
+        $result = $num1 + $num2 + $num3;
+        return "$num1 + $num2 + $num3 = $result";
+    } elseif ($operation === '-') {
+        $result = $num1 - $num2 - $num3;
+        return "$num1 - $num2 - $num3 = $result";
+    } else {
+        return "Недопустимая операция. Поддерживаются только сложение (+) и вычитание (-).";
+    }
+}
+
+// Пример использования функции
+$num1 = 10;
+$num2 = 5;
+$num3 = 2;
+$operation = '+';
+
+echo calculate($num1, $num2, $num3, $operation);
+?>
+//------------------------------------
