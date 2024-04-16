@@ -1,0 +1,106 @@
+//1--------------------------------
+<?php
+class MathOperations {
+    public function add($num1, $num2) {
+        $result = $num1 + $num2;
+        return "$num1 + $num2 = $result";
+    }
+
+    public function square($num) {
+        $result = $num * $num;
+        return "$num ^ 2 = $result";
+    }
+}
+
+// Создание объекта класса MathOperations
+$math = new MathOperations();
+
+// Вызов функций класса и вывод результатов на экран
+$num1 = 10;
+$num2 = 5;
+echo $math->add($num1, $num2) . "<br>";
+
+$num3 = 8;
+echo $math->square($num3);
+?>
+//2-----------------------
+
+<?php
+function sumNumbers(...$numbers) {
+    $result = array_sum($numbers);
+    $expression = implode(' + ', $numbers) . ' = ' . $result;
+    return $expression;
+}
+
+// Пример использования функции
+echo sumNumbers(10, 5, 8, 3, 2);
+?>
+
+//3-----------------------------------
+
+<?php
+class MathOperations {
+    public function sumNumbers(...$numbers) {
+        $result = array_sum($numbers);
+        $expression = implode(' + ', $numbers) . ' = ' . $result;
+        return $expression;
+    }
+}
+
+// Создание объекта класса MathOperations
+$math = new MathOperations();
+
+// Вызов функции класса и вывод результата на экран
+echo $math->sumNumbers(10, 5, 8, 3, 2);
+?>
+
+//4---------------------------------------
+
+<?php
+function findSumOfMinMax($numbers) {
+    $min = $numbers[0];
+    $max = $numbers[0];
+
+    foreach ($numbers as $number) {
+        if ($number < $min) {
+            $min = $number;
+        }
+        if ($number > $max) {
+            $max = $number;
+        }
+    }
+
+    $sum = $min + $max;
+    return $sum;
+}
+
+// Пример использования функции
+$numberArray = [10, 5, 8, 3, 2];
+echo findSumOfMinMax($numberArray);
+?>
+
+//5--------------------------------------
+
+<?php
+class MathOperations {
+    public function findAverage($numbers) {
+        $total = array_sum($numbers);
+        $count = count($numbers);
+
+        if ($count > 0) {
+            return $total / $count;
+        } else {
+            return 0; // Возвращаем 0 в случае пустого массива
+        }
+    }
+}
+
+// Создание объекта класса MathOperations
+$math = new MathOperations();
+
+// Массив чисел для вычисления среднего значения
+$numberArray = [10, 5, 8, 3, 2];
+
+// Вызов метода класса и вывод результата на экран
+echo $math->findAverage($numberArray);
+?>
